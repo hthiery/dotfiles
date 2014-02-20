@@ -1,5 +1,5 @@
-Windows
--------
+Linux
+-----
 Use dfn to install all dotfiles in homedirectory.
 
 
