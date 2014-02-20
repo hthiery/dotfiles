@@ -62,6 +62,8 @@ endif
 if has("gui_running")
 	set guioptions-=m "remove menu bar
 	set guioptions-=T "remove toolbar
+	set guioptions-=R "remove right scrollbar
+	set guioptions-=L "remove left scrollbar
 	set guifont=Inconsolata-dz_for_Powerline:h10:cANSI
 endif
 
