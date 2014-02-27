@@ -1,10 +1,6 @@
 [core]
 	excludesfile = /home/hthiery/.gitignore_global
 
-[user]
-	email = heiko.thiery@fixme.com
-	name = Heiko Thiery
-
 [color]
 	branch = auto
 	status = auto
