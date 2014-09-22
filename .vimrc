@@ -10,9 +10,14 @@ set laststatus=2
 set hlsearch
 set incsearch
 
+" This is used for running vim in putty terminal with modified color palette.
+if !has("gui_running")
+"	let g:solarized_termtrans = 1
+"	but now the font is not correct any more?!
+endif
 
-set background=dark
 colorscheme solarized
+set background=dark
 
 set backspace=indent,eol,start
 
@@ -25,17 +30,6 @@ nnoremap N Nzzzv
 
 " cscope
 
-" Tagbar plugin
-let g:tagbar_ctags_bin='ctags.exe'
-nnoremap <f8> :TagbarToggle<CR>
-
-" Airline plugin
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-
-" NERDtree
-nnoremap <f7> :NERDTreeToggle<CR>
-
 
 "Highlight unwanted space
 "http://vim.wikia.com/wiki/Highlight_unwanted_spaces
@@ -44,9 +38,12 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertEnter * match ExtraWhiteSpace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
-nnoremap <f1> :bN<CR>
-nnoremap <f2> :bn<CR>
+"Cycling through listed buffers
+nnoremap <f1> :bn<CR>
+nnoremap <f2> :bp<CR>
 nnoremap <f4> :bd<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 
 " auto-reload modified .vimrc and .gvimrc
 if has("autocmd")
@@ -67,3 +64,15 @@ if has("gui_running")
 	set guifont=Inconsolata-dz_for_Powerline:h10:cANSI
 endif
 
+let s:solarized_termtrans = 0
+
+" Tagbar plugin
+let g:tagbar_ctags_bin='ctags.exe'
+nnoremap <f8> :TagbarToggle<CR>
+
+" Airline plugin
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" NERDtree
+nnoremap <f7> :NERDTreeToggle<CR>
