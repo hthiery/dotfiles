@@ -5,17 +5,24 @@ set encoding=utf-8
 
 syntax enable
 set number
-set ts=4
+set tabstop=4
+set shiftwidth=4
 set laststatus=2
 set hlsearch
 set incsearch
 
+set scrolloff=5
+
+set smartindent
+set autoindent
 
 set background=dark
 colorscheme solarized
 
 set backspace=indent,eol,start
 
+
+nnoremap <F9>  :%s/\s\+$//<CR>
 
 " Keep search matches in the middle of the window
 nnoremap n nzzzv
@@ -44,6 +51,8 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertEnter * match ExtraWhiteSpace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
+
+
 nnoremap <f1> :bN<CR>
 nnoremap <f2> :bn<CR>
 nnoremap <f4> :bd<CR>
@@ -57,6 +66,10 @@ if has("autocmd")
 	autocmd Filetype python set tabstop=8
 	autocmd Filetype python set softtabstop=4
 	autocmd Filetype python set shiftwidth=4
+
+	set colorcolumn=81
+	highlight OverLength ctermbg=red ctermfg=white guibg=red
+	match OverLength /\%81v.\+/
 endif
 
 if has("gui_running")
@@ -64,6 +77,6 @@ if has("gui_running")
 	set guioptions-=T "remove toolbar
 	set guioptions-=R "remove right scrollbar
 	set guioptions-=L "remove left scrollbar
-	set guifont=Inconsolata-dz_for_Powerline:h10:cANSI
+	set guifont=Inconsolata-dz_for_Powerline:h11:cANSI
 endif
 
