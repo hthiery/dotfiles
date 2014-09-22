@@ -58,7 +58,7 @@ if has("autocmd")
 	autocmd Filetype python set shiftwidth=4
 
 	if version >= 730
-    	set colorcolumn=81
+		set colorcolumn=81
 		highlight OverLength ctermbg=red ctermfg=white guibg=red
 		match OverLength /\%81v.\+/
 	endif
