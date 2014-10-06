@@ -20,9 +20,9 @@ get_cvs_info () {
 get_git_info () {
 	local OUT=`__git_ps1 "%s"`
 	if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
-		echo "$Red$OUT"
+		echo "${Red}git:$OUT"
 	else
-		echo "$Green$OUT"
+		echo "${Green}git:$OUT"
 	fi
 }
 
@@ -36,6 +36,13 @@ get_scm_info () {
 	fi
 }
 
+Promptsymbol='#'
+
+Groupercolor="$Reset"
+Leftgroupsymbol='('
+Rightgroupsymbol=')'
+Leftgrouper="$Groupercolor$Leftgroupsymbol"
+Rightgrouper="$Groupercolor$Rightgroupsymbol"
 
 set_prompt () {
 	lastreturn=$?
@@ -46,11 +53,6 @@ set_prompt () {
 	Lastline='\342\224\224'
 	Horizontal='\342\224\200'
 	Vertical='\342\224\202'
-
-	Leftgrouper='('
-	Rightgrouper=')'
-
-	Promptsymbol='#'
 
 	JumpToStart='\[\e[0G\]'
 	SavePos='\[\e[s\]'
@@ -79,7 +81,7 @@ wrap () {
 	width=$(tput cols)
 	firstline=true
 	restlength=$width
-	PS1="$Reset$White"
+	PS1="$Reset"
 
 	while [[ $# -ne 0 ]]; do
 		colourless=$(echo -E "$1" | cut -c 13-)
@@ -95,18 +97,18 @@ wrap () {
 			else
 				PS1+="$Middleline"
 			fi
-			PS1+="$Leftgrouper$1$White$Rightgrouper"
+			PS1+="$Leftgrouper$1$Rightgrouper"
 			((restlength -= length))
 			shift
 		elif [[ $restlength -ge $length ]]; then
-			PS1+="$Horizontal$Leftgrouper$1$White$Rightgrouper"
+			PS1+="$Horizontal$Leftgrouper$1$Rightgrouper"
 			((restlength -= length))
 			shift
 		elif [[ $length -gt $width ]]; then
 			textcolour=$(echo $1 | cut -c -12)
 			text=$(echo -ne "$colourless" | sed 's/.\{'$(($width - 2))'\}/&\n| /g')
 			linestofix=$(($(echo -n "$text" | wc -l) - 1))
-			PS1+="\n$Middleline$Leftgrouper$textcolour$text$White$Rightgrouper$SavePos$JumpToStart"
+			PS1+="\n$Middleline$Leftgrouper$textcolour$text$Rightgrouper$SavePos$JumpToStart"
 			while [[ $linestofix -ge 0 ]]; do
 			    PS1+="$Vertical$MoveUp$MoveLeft"
 			    ((linestofix -= 1))
