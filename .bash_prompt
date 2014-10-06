@@ -1,0 +1,61 @@
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+yellow=$(tput setaf 3)
+white=$(tput setaf 7)
+bold=$(tput bold)
+reset=$(tput sgr0)
+
+
+prefix="\[$green$bold\]\u\[$reset\]@\[$green$bold\]\h\[$reset\]"
+
+EXIT_S=2
+catch_rc () {
+	EXIT_S=$?
+}
+
+cmd_status () {
+	if [ "$EXIT_S" == "0" ]; then
+		echo "$EXIT_S"
+	else
+		echo "$EXIT_S"
+	fi
+}
+
+GIT_PS1_SHOWDIRTYSTATE=true
+
+function git_dirty {
+	[[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "*"
+}
+
+get_cvs_info () {
+	if [ -e CVS ] ; then
+		#cat CVS/TAG | cut -c 2- 2>/dev/null | sed '#\(.*\)# (cvs::\1)#'
+		BRANCH=`cat CVS/TAG 2>/dev/null | cut -c 2- `
+
+		if [ "$BRANCH" != "" ]; then
+			echo "-($green $BRANCH$reset)"
+		fi
+	fi
+}
+
+get_git_info () {
+	local OUT=`__git_ps1 "%s"`
+	if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
+		echo "-($red$OUT$reset)"
+	else
+		echo "-($green$OUT$reset)"
+	fi
+}
+
+get_scm_info () {
+	if git rev-parse --git-dir > /dev/null 2>&1; then
+		get_git_info
+	elif [ -e CVS ] ; then
+		get_cvs_info
+	else
+		echo ""
+	fi
+}
+
+PS1="\$(catch_rc)($prefix:)-(\[$white$bold\]\w\[$reset\])\$(get_scm_info) $ "
