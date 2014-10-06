@@ -1,0 +1,8 @@
+[core]
+	excludesfile = /home/hthiery/.gitignore_global
+
+[color]
+	branch = auto
+	status = auto
+	diff = auto
+	ui = auto
