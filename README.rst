@@ -16,3 +16,10 @@ Expecte the sources are in c:\sources. A NTFS link is used to bring the vim file
 Fonts
 -----
 * Inconsolata-dz for Powerline from https://github.com/Lokaltog/powerline-fonts/tree/master/InconsolataDz
+
+Submodules
+----------
+To install the submodules configured in .gitsubmodules just execute the following commands after cloning this repo.
+
+git submodules init
+git submodules udpate
