@@ -1,32 +1,10 @@
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-blue=$(tput setaf 4)
-yellow=$(tput setaf 3)
-white=$(tput setaf 7)
-bold=$(tput bold)
-reset=$(tput sgr0)
-
-
-prefix="\[$green$bold\]\u\[$reset\]@\[$green$bold\]\h\[$reset\]"
-
-EXIT_S=2
-catch_rc () {
-	EXIT_S=$?
-}
-
-cmd_status () {
-	if [ "$EXIT_S" == "0" ]; then
-		echo "$EXIT_S"
-	else
-		echo "$EXIT_S"
-	fi
-}
-
-GIT_PS1_SHOWDIRTYSTATE=true
-
-function git_dirty {
-	[[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "*"
-}
+Red=$(tput setaf 1)
+Green=$(tput setaf 2)
+Blue=$(tput setaf 4)
+Yellow=$(tput setaf 3)
+White=$(tput setaf 7)
+Bold=$(tput bold)
+Reset=$(tput sgr0)
 
 get_cvs_info () {
 	if [ -e CVS ] ; then
@@ -34,7 +12,7 @@ get_cvs_info () {
 		BRANCH=`cat CVS/TAG 2>/dev/null | cut -c 2- `
 
 		if [ "$BRANCH" != "" ]; then
-			echo "-($green $BRANCH$reset)"
+			echo "$Green $BRANCH"
 		fi
 	fi
 }
@@ -42,9 +20,9 @@ get_cvs_info () {
 get_git_info () {
 	local OUT=`__git_ps1 "%s"`
 	if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
-		echo "-($red$OUT$reset)"
+		echo "$Red$OUT"
 	else
-		echo "-($green$OUT$reset)"
+		echo "$Green$OUT"
 	fi
 }
 
@@ -58,4 +36,89 @@ get_scm_info () {
 	fi
 }
 
-PS1="\$(catch_rc)($prefix:)-(\[$white$bold\]\w\[$reset\])\$(get_scm_info) $ "
+
+set_prompt () {
+	lastreturn=$?
+
+	# "Light" line drawing characters
+	Startline='\342\224\214'
+	Middleline='\342\224\234'
+	Lastline='\342\224\224'
+	Horizontal='\342\224\200'
+	Vertical='\342\224\202'
+
+	Leftgrouper='('
+	Rightgrouper=')'
+
+	Promptsymbol='#'
+
+	JumpToStart='\[\e[0G\]'
+	SavePos='\[\e[s\]'
+	RestorePos='\[\e[u\]'
+	MoveUp='\[\e[1A\]'
+	MoveLeft='\[\e[1D\]'
+
+	userhost="$Green$(whoami)@$(hostname)"
+
+	if [[ $lastreturn -eq 0 ]]; then lastreturn=""; else lastreturn="$Red$lastreturn"; fi
+
+	#currentdir="$Blue$(pwd | sed "s!^$HOME!~!")"
+	currentdir="$Yellow$(pwd | sed "s!^$HOME!~!")"
+	#currentdir="$Green$(pwd | sed "s!^$HOME!~!")"
+	#currentdir="$White$(pwd | sed "s!^$HOME!~!")"
+
+	scminfo=`get_scm_info`
+
+	wrap "$userhost" "$currentdir" "$scminfo" "$lastreturn"
+
+	PS1+="\n$Lastline$Horizontal$Leftgrouper$Promptsymbol$Rightgrouper $Reset"
+}
+
+# TODO Clean up the mess, first argument will never be properly linebroken at the moment
+wrap () {
+	width=$(tput cols)
+	firstline=true
+	restlength=$width
+	PS1="$Reset$White"
+
+	while [[ $# -ne 0 ]]; do
+		colourless=$(echo -E "$1" | cut -c 13-)
+		length=${#colourless}
+		((length += 3))
+
+		if [[ -z "$1" ]]; then
+			shift
+			continue
+		elif [[ $restlength -eq $width ]]; then
+			if [[ $firstline == "true" ]]; then
+				PS1+="$Startline"
+			else
+				PS1+="$Middleline"
+			fi
+			PS1+="$Leftgrouper$1$White$Rightgrouper"
+			((restlength -= length))
+			shift
+		elif [[ $restlength -ge $length ]]; then
+			PS1+="$Horizontal$Leftgrouper$1$White$Rightgrouper"
+			((restlength -= length))
+			shift
+		elif [[ $length -gt $width ]]; then
+			textcolour=$(echo $1 | cut -c -12)
+			text=$(echo -ne "$colourless" | sed 's/.\{'$(($width - 2))'\}/&\n| /g')
+			linestofix=$(($(echo -n "$text" | wc -l) - 1))
+			PS1+="\n$Middleline$Leftgrouper$textcolour$text$White$Rightgrouper$SavePos$JumpToStart"
+			while [[ $linestofix -ge 0 ]]; do
+			    PS1+="$Vertical$MoveUp$MoveLeft"
+			    ((linestofix -= 1))
+			done
+			PS1+="$RestorePos"
+			shift
+		else
+			PS1+="\n"
+			restlength=$width
+		fi
+		firstline=false
+	done
+}
+
+PROMPT_COMMAND='set_prompt'
