@@ -65,9 +65,9 @@ set_prompt () {
 	if [[ $lastreturn -eq 0 ]]; then lastreturn=""; else lastreturn="$Red$lastreturn"; fi
 
 	#currentdir="$Blue$(pwd | sed "s!^$HOME!~!")"
-	currentdir="$Yellow$(pwd | sed "s!^$HOME!~!")"
+	#currentdir="$Yellow$(pwd | sed "s!^$HOME!~!")"
 	#currentdir="$Green$(pwd | sed "s!^$HOME!~!")"
-	#currentdir="$White$(pwd | sed "s!^$HOME!~!")"
+	currentdir="$White$(pwd | sed "s!^$HOME!~!")"
 
 	scminfo=`get_scm_info`
 
