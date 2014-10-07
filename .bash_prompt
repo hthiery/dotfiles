@@ -1,10 +1,15 @@
-Red=$(tput setaf 1)
-Green=$(tput setaf 2)
-Blue=$(tput setaf 4)
-Yellow=$(tput setaf 3)
-White=$(tput setaf 7)
-Bold=$(tput bold)
-Reset=$(tput sgr0)
+#
+# This prompt is based on sources from
+# https://www.reddit.com/r/commandline/comments/2hw9dm/dynamic_bash_prompt_a_quick_guide/
+#
+
+
+Reset='\[\e[0m\]'
+White='\[\e[1;37m\]'
+Green='\[\e[0;32m\]'
+Red='\[\e[1;31m\]'
+Yellow='\[\e[0;33m\]'
+Blue='\[\e[1;34m\]'
 
 get_cvs_info () {
 	if [ -e CVS ] ; then
@@ -18,7 +23,8 @@ get_cvs_info () {
 }
 
 get_git_info () {
-	local OUT=`__git_ps1 "%s"`
+	local OUT=`git rev-parse --abbrev-ref HEAD`
+#	local OUT=`__git_ps1 "%s"`
 	if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
 		echo "${Red}git:$OUT"
 	else
@@ -76,7 +82,7 @@ set_prompt () {
 	PS1+="\n$Lastline$Horizontal$Leftgrouper$Promptsymbol$Rightgrouper $Reset"
 }
 
-# TODO Clean up the mess, first argument will never be properly linebroken at the moment
+## TODO Clean up the mess, first argument will never be properly linebroken at the moment
 wrap () {
 	width=$(tput cols)
 	firstline=true
