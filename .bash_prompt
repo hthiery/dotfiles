@@ -3,7 +3,6 @@
 # https://www.reddit.com/r/commandline/comments/2hw9dm/dynamic_bash_prompt_a_quick_guide/
 #
 
-
 Reset='\[\e[0m\]'
 White='\[\e[1;37m\]'
 Green='\[\e[0;32m\]'
@@ -13,18 +12,18 @@ Blue='\[\e[1;34m\]'
 
 get_cvs_info () {
 	if [ -e CVS ] ; then
-		#cat CVS/TAG | cut -c 2- 2>/dev/null | sed '#\(.*\)# (cvs::\1)#'
 		BRANCH=`cat CVS/TAG 2>/dev/null | cut -c 2- `
-
+		cvsinfo="CVS"
 		if [ "$BRANCH" != "" ]; then
 			echo "$Green $BRANCH"
 		fi
+
+		echo "${cvsinfo}"
 	fi
 }
 
 get_git_info () {
 	local OUT=`git rev-parse --abbrev-ref HEAD`
-#	local OUT=`__git_ps1 "%s"`
 	if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
 		echo "${Red}git:$OUT"
 	else
@@ -70,9 +69,6 @@ set_prompt () {
 
 	if [[ $lastreturn -eq 0 ]]; then lastreturn=""; else lastreturn="$Red$lastreturn"; fi
 
-	#currentdir="$Blue$(pwd | sed "s!^$HOME!~!")"
-	#currentdir="$Yellow$(pwd | sed "s!^$HOME!~!")"
-	#currentdir="$Green$(pwd | sed "s!^$HOME!~!")"
 	currentdir="$White$(pwd | sed "s!^$HOME!~!")"
 
 	scminfo=`get_scm_info`
