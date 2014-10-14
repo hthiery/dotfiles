@@ -277,3 +277,10 @@ hi def link cDelimiter Delimiter
 hi def link cBraces Delimiter
 hi def link cBoolean Boolean
 
+
+"let cairo_deprecated_errors = 1
+"let gdkpixbuf_deprecated_errors = 1
+let glib_deprecated_errors = 1
+"let gtk3_deprecated_errors = 1
+
+runtime! syntax/glib.vim
