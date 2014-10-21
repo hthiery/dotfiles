@@ -74,13 +74,19 @@ endif
 
 let s:solarized_termtrans = 0
 
+" ---------------------------------------------------------
 " Tagbar plugin
 let g:tagbar_ctags_bin='ctags.exe'
 nnoremap <f8> :TagbarToggle<CR>
 
+" ---------------------------------------------------------
 " Airline plugin
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
 
+" ---------------------------------------------------------
 " NERDtree
 nnoremap <f7> :NERDTreeToggle<CR>
+
+
