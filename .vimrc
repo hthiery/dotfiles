@@ -90,3 +90,23 @@ let g:airline_theme='powerlineish'
 nnoremap <f7> :NERDTreeToggle<CR>
 
 
+" ---------------------------------------------------------
+" Project
+" before call project#rc()
+"let g:project_enable_welcome = 0
+" if you want the NERDTree integration.
+let g:project_use_nerdtree = 1
+
+set rtp+=~/.vim/bundle/vim-project/
+" custom starting path
+" default starting path (the home directory)
+
+let hostname = substitute(system('hostname -s'), '\n', '', '')
+if hostname == "build07"
+	call project#rc("/local/hthiery/sources")
+
+	Project 'glib'
+	Project 'kex-update/wrll-kbc/dist/kex-update/', 'kex-update'
+	Project 'kex-vpd/wrll-kbc/dist/kex-vpd/',       'kex-vpd'
+
+endif
