@@ -83,7 +83,12 @@ nnoremap <f8> :TagbarToggle<CR>
 " Airline plugin
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
+"let g:airline_theme='powerlineish'
+"let g:airline_theme='base16'
+"let g:airline_theme='bubblegum'
+let g:airline_theme='luna'
+"let g:airline_theme='solarized'
+"let g:airline_theme='dark'
 
 " ---------------------------------------------------------
 " NERDtree
@@ -96,17 +101,9 @@ nnoremap <f7> :NERDTreeToggle<CR>
 "let g:project_enable_welcome = 0
 " if you want the NERDTree integration.
 let g:project_use_nerdtree = 1
-
 set rtp+=~/.vim/bundle/vim-project/
-" custom starting path
-" default starting path (the home directory)
 
-let hostname = substitute(system('hostname -s'), '\n', '', '')
-if hostname == "build07"
-	call project#rc("/local/hthiery/sources")
 
-	Project 'glib'
-	Project 'kex-update/wrll-kbc/dist/kex-update/', 'kex-update'
-	Project 'kex-vpd/wrll-kbc/dist/kex-vpd/',       'kex-vpd'
-
+if !empty(glob("~/.vim_projects"))
+	source ~/.vim_projects
 endif
