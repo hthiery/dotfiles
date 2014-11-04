@@ -83,10 +83,10 @@ nnoremap <f8> :TagbarToggle<CR>
 " Airline plugin
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-"let g:airline_theme='powerlineish'
+let g:airline_theme='powerlineish'
 "let g:airline_theme='base16'
 "let g:airline_theme='bubblegum'
-let g:airline_theme='luna'
+"let g:airline_theme='luna'
 "let g:airline_theme='solarized'
 "let g:airline_theme='dark'
 
@@ -98,11 +98,10 @@ nnoremap <f7> :NERDTreeToggle<CR>
 " ---------------------------------------------------------
 " Project
 " before call project#rc()
-"let g:project_enable_welcome = 0
+let g:project_enable_welcome = 0
 " if you want the NERDTree integration.
 let g:project_use_nerdtree = 1
 set rtp+=~/.vim/bundle/vim-project/
-
 
 if !empty(glob("~/.vim_projects"))
 	source ~/.vim_projects
