@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/vim-project"]
 	path = .vim/bundle/vim-project
 	url = https://github.com/amiorin/vim-project.git
+[submodule ".vim/bundle/robotframework-vim"]
+	path = .vim/bundle/robotframework-vim
+	url = https://github.com/mfukar/robotframework-vim.git
