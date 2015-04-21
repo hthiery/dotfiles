@@ -47,12 +47,6 @@ nnoremap <f4> :bd<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
-if v:version >= 703
-	set colorcolumn=81
-	highlight OverLength ctermbg=red ctermfg=white guibg=red
-	match OverLength /\%81v.\+/
-endif
-
 " auto-reload modified .vimrc and .gvimrc
 if has("autocmd")
 	autocmd BufWritePost .vimrc source ~/.vimrc
@@ -62,6 +56,13 @@ if has("autocmd")
 	autocmd Filetype python set tabstop=8
 	autocmd Filetype python set softtabstop=4
 	autocmd Filetype python set shiftwidth=4
+
+	if v:version >= 703
+		highlight OverLength ctermbg=red ctermfg=white guibg=red
+		autocmd Filetype * match none
+		autocmd Filetype python,c,sh set colorcolumn=81
+		autocmd Filetype python,c,sh match OverLength /\%81v.\+/
+	endif
 endif
 
 if has("gui_running")
