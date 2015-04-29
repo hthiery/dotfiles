@@ -21,7 +21,10 @@ colorscheme solarized
 
 set backspace=indent,eol,start
 
-set visualbell
+" Disable beep and flash with an autocmd
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 
 
 nnoremap <F9>  :%s/\s\+$//<CR>
