@@ -21,6 +21,8 @@ colorscheme solarized
 
 set backspace=indent,eol,start
 
+set visualbell
+
 
 nnoremap <F9>  :%s/\s\+$//<CR>
 
