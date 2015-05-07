@@ -16,8 +16,10 @@ set scrolloff=5
 set smartindent
 set autoindent
 
-set background=dark
-colorscheme solarized
+"set background=dark
+" colorscheme solarized
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorschem base16-chalk
 
 set backspace=indent,eol,start
 

@@ -1,8 +1,16 @@
 [core]
 	excludesfile = /home/hthiery/.gitignore_global
+	editor = vi
 
 [color]
 	branch = auto
 	status = auto
 	diff = auto
 	ui = auto
+
+[pull]
+	rebase = true
+
+[user]
+	name = Heiko Thiery
+	email = heiko.thiery@kontron.com

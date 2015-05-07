@@ -179,28 +179,41 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Colors
-set $base03    #002b36
-set $base02    #073642
-set $base01    #586e75
-set $base00    #657b83
-set $base0     #839496
-set $base1     #93a1a1
-set $base2     #eee8d5
-set $base3     #fdf6e3
-set $yellow    #b58900
-set $orange    #cb4b16
-set $red       #dc322f
-set $magenta   #d33682
-set $violet    #6c71c4
-set $blue      #268bd2
-set $cyan      #2aa198
-set $green     #859900
+#set $base03    #002b36
+#set $base02    #073642
+#set $base01    #586e75
+#set $base00    #657b83
+#set $base0     #839496
+#set $base1     #93a1a1
+#set $base2     #eee8d5
+#set $base3     #fdf6e3
+#set $yellow    #b58900
+#set $orange    #cb4b16
+#set $red       #dc322f
+#set $magenta   #d33682
+#set $violet    #6c71c4
+##set $blue      #268bd2
+#set $cyan      #2aa198
+#set $green     #859900
 
-# colorclass border background text indicator
-client.focused           $blue   $blue   #ffffff #ffffff
-client.unfocused         #657b83 #657b83 #ffffff #ffffff
-client.focused_inactive  #657b83 #657b83 #ffffff #ffffff
-client.background #ffffff
+set $base01    #282828
+set $base03    #585858
+set $base04    #B8B8B8
+set $base05    #D8D8D8
+set $base08    #BA8BAF
+set $base0C    #86C1B9
+
+set $white     #D8D8D8
+set $green     #A1B56C
+set $blue      #7CAFC2
+set $cyan      #86C1B9
+set $red       #AB4642
+
+# colorclass             border   background  text     indicator
+client.focused           $base03  $blue       $base01  $red
+client.unfocused         $base03  #657b83     #ffffff  $red
+client.focused_inactive  #657b83  #657b83     #ffffff  $red
+client.background        #ffffff
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -212,7 +225,8 @@ bar {
         separator  #666666
 
         # Type             border  background font
-        focused_workspace  #008fff #007fff #ffffff
+        #focused_workspace  $blue   #5f676a #ffffff
+        focused_workspace  $blue   $blue   $base01
         active_workspace   $base01 #5f676a #ffffff
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #aa0000 #990000 #ffffff
@@ -221,7 +235,12 @@ bar {
     status_command i3status --config ~/.i3/i3status.conf
 }
 
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+bindsym $mod+u border none
 
+for_window [class="^URxvt$"] border 1pixel
+for_window [class="^VirtualBox$"] move container to workspace $tag10
 
 exec --no-startup-id xsetroot -solid "#586e75"
 
