@@ -19,7 +19,8 @@ set autoindent
 set background=dark
 " colorscheme solarized
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorschem base16-chalk
+"colorschem base16-chalk
+colorschem base16-bright
 
 set backspace=indent,eol,start
 
