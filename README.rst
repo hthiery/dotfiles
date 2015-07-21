@@ -24,8 +24,8 @@ To install the submodules configured in .gitsubmodules just execute the followin
 
 .. code :: shell
 
-git submodule init
-git submodule udpate
+  git submodule init
+  git submodule udpate
 
 
 Shell/Bash
@@ -33,7 +33,7 @@ Shell/Bash
 
 .. code :: shell
 
-if [ -d ~/dotfiles/base16-shell/ ]; then
-    BASE16_SHELL="$HOME/dotfiles/base16-shell/base16-bright.dark.sh"
-    [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-fi
+  if [ -d ~/dotfiles/base16-shell/ ]; then
+      BASE16_SHELL="$HOME/dotfiles/base16-shell/base16-bright.dark.sh"
+      [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+  fi
