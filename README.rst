@@ -16,6 +16,13 @@ Expecte the sources are in c:\sources. A NTFS link is used to bring the vim file
 
 Fonts
 -----
+
+To update the font cache use:
+
+.. code :: shell
+
+  fc-cache -vf
+
 * Inconsolata-dz for Powerline from https://github.com/Lokaltog/powerline-fonts/tree/master/InconsolataDz
 
 Submodules
@@ -28,8 +35,23 @@ To install the submodules configured in .gitsubmodules just execute the followin
   git submodule udpate
 
 
+
+Color Settings
+--------------
+
+Vim
+===
+
+TBD
+
+
+XResources
+==========
+
+TBD
+
 Shell/Bash
-----------
+==========
 
 .. code :: shell
 
