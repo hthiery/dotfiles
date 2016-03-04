@@ -2,6 +2,18 @@ Linux
 -----
 Use dfn to install all dotfiles in homedirectory.
 
+Prompt
+======
+
+add the following lines to ~/.bashrc
+
+.. code :: shell
+
+  if [ -e ~/.bash_prompt ]; then
+      source ~/.bash_prompt
+  fi
+
+
 
 Windows
 -------
