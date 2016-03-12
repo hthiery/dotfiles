@@ -10,6 +10,7 @@ set shiftwidth=4
 set laststatus=2
 set hlsearch
 set incsearch
+set hidden
 
 set scrolloff=5
 
