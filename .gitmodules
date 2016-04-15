@@ -1,27 +1,21 @@
-[submodule "home/.vim/bundlehome/.vim-airline"]
-	path = home/.vim/bundlehome/.vim-airline
-	url = https://github.com/blinghome/.vim-airline
+[submodule "home/.vim/bundle/vim-airline"]
+	path = home/.vim/bundle/vim-airline
+	url = git://github.com/bling/vim-airline
 [submodule "home/.vim/bundle/tagbar"]
 	path = home/.vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "home/.vim/bundlehome/.vim-colors-solarized"]
-	path = home/.vim/bundlehome/.vim-colors-solarized
-	url = https://github.com/altercationhome/.vim-colors-solarized
-[submodule "home/.vim/bundle/ctrlphome/.vim"]
-	path = home/.vim/bundle/ctrlphome/.vim
-	url = https://github.com/kien/ctrlphome/.vim.git
-[submodule "home/.vim/bundlehome/.vim-fugitive"]
-	path = home/.vim/bundlehome/.vim-fugitive
-	url = https://github.com/tpopehome/.vim-fugitive.git
-[submodule "home/.vim/bundlehome/.vim-project"]
-	path = home/.vim/bundlehome/.vim-project
-	url = https://github.com/amiorinhome/.vim-project.git
-[submodule "home/.vim/bundle/robotframeworkhome/.vim"]
-	path = home/.vim/bundle/robotframeworkhome/.vim
-	url = https://github.com/mfukar/robotframeworkhome/.vim.git
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "home/.vim/bundle/ctrlp.vim"]
+	path = home/.vim/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "home/.vim/bundle/vim-fugitive"]
+	path = home/.vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive
+[submodule "home/.vim/bundle/robotframework-vim"]
+	path = home/.vim/bundle/robotframework-vim
+	url = git://github.com/mfukar/robotframework-vim.git
 [submodule "base16-shell"]
 	path = base16-shell
-	url = https://github.com/chriskempson/base16-shell.git
-[submodule "home/.vim/bundle/base16home/.vim"]
-	path = home/.vim/bundle/base16home/.vim
-	url = https://github.com/chriskempson/base16home/.vim.git
+	url = git://github.com/chriskempson/base16-shell.git
+[submodule "home/.vim/bundle/base16/vim"]
+	path = home/.vim/bundle/base16-vim
+	url = git://github.com/chriskempson/base16-vim.git
