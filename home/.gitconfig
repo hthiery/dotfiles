@@ -11,6 +11,9 @@
 [pull]
 	rebase = true
 
+[push]
+	default = matching
+
 [user]
 	name = Heiko Thiery
 	email = heiko.thiery@kontron.com
