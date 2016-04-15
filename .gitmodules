@@ -16,12 +16,6 @@
 [submodule "home/.vim/bundle/base16-vim"]
 	path = home/.vim/bundle/base16-vim
 	url = git://github.com/chriskempson/base16-vim.git
-[submodule "vim-airline"]
-	path = vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim-airline-themes"]
-	path = vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "home/.vim/bundle/vim-airline-themes"]
 	path = home/.vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
