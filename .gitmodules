@@ -13,9 +13,6 @@
 [submodule "home/.vim/bundle/robotframework-vim"]
 	path = home/.vim/bundle/robotframework-vim
 	url = git://github.com/mfukar/robotframework-vim.git
-[submodule "base16-shell"]
-	path = base16-shell
-	url = git://github.com/chriskempson/base16-shell.git
 [submodule "home/.vim/bundle/base16/vim"]
 	path = home/.vim/bundle/base16-vim
 	url = git://github.com/chriskempson/base16-vim.git
