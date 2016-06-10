@@ -3,11 +3,13 @@ Linux
 Use `homeshick`_ to manage the dotfiles in the homedirectory https://github.com/andsens/homeshick
 
 .. code :: shell
+
   git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 
 Enable homeshick script by sourcing it:
 
 .. code :: shell
+
   # from sh and its derivates (bash, zsh etc.)
   printf '\nsource "$HOME/.homesick/repos/homeshick/homeshick.sh"' >> $HOME/.bashrc
   # csh and derivatives (i.e. tcsh)
@@ -18,6 +20,7 @@ Enable homeshick script by sourcing it:
 Go to the repos directory and clone the dotfiles repo.
 
 .. code :: shell
+
   cd $HOME/.homesick/repos/
   git clone https://github.com/hthiery/dotfiles.git
 
