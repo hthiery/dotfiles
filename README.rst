@@ -1,6 +1,25 @@
 Linux
 -----
-Use dfn to install all dotfiles in homedirectory.
+Use `homeshick`_ to manage the dotfiles in the homedirectory https://github.com/andsens/homeshick
+
+.. code :: shell
+  git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+
+Enable homeshick script by sourcing it:
+
+.. code :: shell
+  # from sh and its derivates (bash, zsh etc.)
+  printf '\nsource "$HOME/.homesick/repos/homeshick/homeshick.sh"' >> $HOME/.bashrc
+  # csh and derivatives (i.e. tcsh)
+  printf '\nalias homeshick source "$HOME/.homesick/repos/homeshick/bin/homeshick.csh"\n' >> $HOME/.cshrc
+  # fish shell
+  echo \n'source "$HOME/.homesick/repos/homeshick/homeshick.fish"' >> "$HOME/.config/fish/config.fish"
+
+Go to the repos directory and clone the dotfiles repo.
+
+.. code :: shell
+  cd $HOME/.homesick/repos/
+  git clone https://github.com/hthiery/dotfiles.git
 
 Prompt
 ======
@@ -70,4 +89,7 @@ Shell/Bash
   if [ -d ~/dotfiles/base16-shell/ ]; then
       BASE16_SHELL="$HOME/dotfiles/base16-shell/base16-bright.dark.sh"
       [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-  fi
+  si
+
+
+.. _homeshick: https://github.com/andsens/homeshick
