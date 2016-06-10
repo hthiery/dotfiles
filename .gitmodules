@@ -19,3 +19,6 @@
 [submodule "home/.vim/bundle/vim-airline-themes"]
 	path = home/.vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "home/.vim/bundle/nerdtree"]
+	path = home/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
