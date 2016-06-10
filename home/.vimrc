@@ -66,6 +66,11 @@ if has("autocmd")
 	autocmd Filetype python set softtabstop=4
 	autocmd Filetype python set shiftwidth=4
 
+	autocmd Filetype robot set expandtab
+	autocmd Filetype robot set shiftwidth=4
+	autocmd Filetype robot set softtabstop=4
+
+
 	if v:version >= 703
 		highlight OverLength ctermbg=red ctermfg=white guibg=red
 		autocmd Filetype * match none
@@ -104,6 +109,8 @@ let g:airline_theme='powerlineish'
 " NERDtree
 nnoremap <f7> :NERDTreeToggle<CR>
 
+" ---------------------------------------------------------
+" robotframework
 
 " ---------------------------------------------------------
 " Project
