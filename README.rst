@@ -1,6 +1,9 @@
 Linux
 -----
-Use `homeshick`_ to manage the dotfiles in the homedirectory https://github.com/andsens/homeshick
+
+Homeshick
+=========
+Use `homeshick`_ to manage the dotfiles in the homedirectory:
 
 .. code :: shell
 
@@ -17,15 +20,15 @@ Enable homeshick script by sourcing it:
   # fish shell
   echo \n'source "$HOME/.homesick/repos/homeshick/homeshick.fish"' >> "$HOME/.config/fish/config.fish"
 
-Go to the repos directory and clone the dotfiles repo.
+Go to the repos directory and clone the dotfiles repo:
 
 .. code :: shell
 
   cd $HOME/.homesick/repos/
   git clone https://github.com/hthiery/dotfiles.git
 
-Prompt
-======
+Bash Prompt
+===========
 
 add the following lines to ~/.bashrc
 
