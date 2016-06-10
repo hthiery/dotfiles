@@ -27,6 +27,12 @@ Go to the repos directory and clone the dotfiles repo:
   cd $HOME/.homesick/repos/
   git clone https://github.com/hthiery/dotfiles.git
 
+Enable dotfiles castle:
+
+.. code :: shell
+
+  git link homeshick
+
 Bash Prompt
 ===========
 
