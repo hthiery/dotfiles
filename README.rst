@@ -85,7 +85,15 @@ Color Settings
 Vim
 ===
 
-TBD
+* https://github.com/vim-airline/vim-airline
+* https://github.com/majutsushi/tagbar
+* https://github.com/kien/ctrlp.vim
+* https://github.com/tpope/vim-fugitive
+* https://github.com/mfukar/robotframework-vim
+* https://github.com/chriskempson/base16-vim
+* https://github.com/vim-airline/vim-airline-themes
+* https://github.com/scrooloose/nerdtree
+* https://github.com/rking/ag.vim
 
 
 XResources
