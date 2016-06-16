@@ -109,6 +109,8 @@ let g:airline_theme='powerlineish'
 " NERDtree
 nnoremap <f7> :NERDTreeToggle<CR>
 
+nnoremap \  :Ag 
+
 " ---------------------------------------------------------
 " robotframework
 
