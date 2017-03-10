@@ -31,7 +31,7 @@ Enable dotfiles castle:
 
 .. code :: shell
 
-  git link homeshick
+  homeshick link dotfiles
 
 Bash Prompt
 ===========
