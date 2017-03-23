@@ -3,14 +3,18 @@ call pathogen#infect()
 set encoding=utf-8
 
 
-syntax enable
-set number
-set tabstop=4
+syntax enable       " enable syntax processing
+set number          " show line numbers
+set cursorline      " highlight current line
+set tabstop=4       " number of visual spaces per TAB
 set shiftwidth=4
 set laststatus=2
-set hlsearch
-set incsearch
+
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
 set hidden
+
+set wildmenu            " visual autocomplete for command menu
 
 set scrolloff=5
 
@@ -109,7 +113,13 @@ let g:airline_theme='powerlineish'
 " NERDtree
 nnoremap <f7> :NERDTreeToggle<CR>
 
-nnoremap \  :Ag 
+nnoremap \  :Ag
+
+
+" ---------------------------------------------------------
+" CtrlP
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
 
 " ---------------------------------------------------------
 " syntastic
@@ -122,8 +132,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" ---------------------------------------------------------
-" robotframework
 
 " ---------------------------------------------------------
 " Project
