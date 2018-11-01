@@ -79,6 +79,10 @@ if has("autocmd")
 	autocmd Filetype robot set shiftwidth=4
 	autocmd Filetype robot set softtabstop=4
 
+	autocmd Filetype html set expandtab
+	autocmd Filetype html set shiftwidth=2
+	autocmd Filetype html set softtabstop=2
+
 	if v:version >= 703
 		highlight OverLength ctermbg=red ctermfg=white guibg=red
 		autocmd Filetype * match none
