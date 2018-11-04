@@ -66,18 +66,23 @@ To update the font cache use:
 The debian package fonts-powerline contains the font Inconsolata-dz for Powerline.
 
 .. code :: shell
-	apt install fonts-powerline
+
+  apt install fonts-powerline
+
 
 With the font-manager the installed fonts can be checked.
 
 .. code :: shell
-	apt install font-manager
+
+  apt install font-manager
+
 
 to update the font cache
 
 .. code :: shell
 
   fc-cache -vf
+
 
 * Inconsolata-dz for Powerline from https://github.com/Lokaltog/powerline-fonts/tree/master/InconsolataDz
 
