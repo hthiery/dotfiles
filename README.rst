@@ -109,7 +109,7 @@ Shell/Bash
   if [ -d ~/dotfiles/base16-shell/ ]; then
       BASE16_SHELL="$HOME/dotfiles/base16-shell/base16-bright.dark.sh"
       [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-  si
+  fi
 
 
 .. _homeshick: https://github.com/andsens/homeshick
