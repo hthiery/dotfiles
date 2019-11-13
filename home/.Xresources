@@ -10,7 +10,7 @@ urxvt*cursorBlink:            false
 urxvt*cursorColor:            #eee8d5
 !!urxvt*font:                   xft:Inconsolata for Powerline:pixelsize=16:antialias=true
 !!urxvt*font:                   xft:Inconsolata-dz for Powerline:pixelsize=16:antialias=true
-urxvt*font:                   xft:Inconsolata NF:pixelsize=17:antialias=true
+urxvt*font:                   xft:Inconsolata NF:pixelsize=16
 urxvt*jumpScroll:             true
 urxvt*scrollBar:              false
 urxvt*scrollTtyOutput:        false
@@ -26,14 +26,14 @@ urxvt*metaSendsEscape:        true
 urxvt*keysym.Home:            \033[1~
 urxvt*keysym.End:             \033[4~
 
-urxvt*keysym.C-F1:            command:\033]710;xft:Inconsolata Nerd Font:pixelsize=16:antialias=true\007
-urxvt*keysym.C-F2:            command:\033]710;xft:Inconsolata Nerd Font:pixelsize=18:antialias=true\007
-urxvt*keysym.C-F3:            command:\033]710;xft:Inconsolata Nerd Font:pixelsize=20:antialias=true\007
-urxvt*keysym.C-F4:            command:\033]710;xft:Inconsolata Nerd Font:pixelsize=22:antialias=true\007
-urxvt*keysym.C-F5:            command:\033]710;xft:Inconsolata Nerd Font:pixelsize=24:antialias=true\007
+urxvt*keysym.C-F1:            command:\033]710;xft:Inconsolata NF:pixelsize=16:antialias=true\007
+urxvt*keysym.C-F2:            command:\033]710;xft:Inconsolata NF:pixelsize=18:antialias=true\007
+urxvt*keysym.C-F3:            command:\033]710;xft:Inconsolate NF:pixelsize=20:antialias=true\007
+urxvt*keysym.C-F4:            command:\033]710;xft:Inconsolate NF:pixelsize=22:antialias=true\007
+urxvt*keysym.C-F5:            command:\033]710;xft:Inconsolate NF:pixelsize=24:antialias=true\007
 
 
-xterm*faceName:           Inconsolata
+xterm*faceName:           Inconsolata NF
 xterm*faceSize:           14
 xterm*dynamicColors:      true
 xterm*saveLines:          32000
