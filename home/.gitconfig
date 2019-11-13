@@ -17,3 +17,14 @@
 [user]
 	name = Heiko Thiery
 	email = heiko.thiery@gmail.com
+
+[sendemail]
+    smtpserver = smtp.gmail.com
+    smtpserverport = 587
+    smtpencryption = tls
+    smtppass = amupxvcbausqffyd
+    smtpuser = heiko.thiery@gmail.com
+    from = Heiko Thiery <heiko.thiery@gmail.com>
+
+[credential]
+	helper = store

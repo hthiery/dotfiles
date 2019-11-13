@@ -244,6 +244,6 @@ for_window [class="^VirtualBox$"] move container to workspace 10
 exec --no-startup-id xsetroot -solid "#586e75"
 
 # auto start applications
-exec --no-startup-id i3-msg 'workspace 1; exec google-chrome; workspace 1'
+exec --no-startup-id i3-msg 'workspace 1; exec chromium; workspace 1'
 
 exec --no-startup-id nitrogen --restore

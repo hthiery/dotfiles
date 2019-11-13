@@ -4,8 +4,6 @@ Xft.hinting:    1
 Xft.hintstyle:  hintfull
 Xft.rgba:       rgb
 
-
-urxvt*:borderLess:            true
 urxvt*cursorBlink:            false
 urxvt*cursorColor:            #eee8d5
 !!urxvt*font:                   xft:Inconsolata for Powerline:pixelsize=16:antialias=true
@@ -31,8 +29,11 @@ urxvt*keysym.C-F2:            command:\033]710;xft:Inconsolata NF:pixelsize=18:a
 urxvt*keysym.C-F3:            command:\033]710;xft:Inconsolate NF:pixelsize=20:antialias=true\007
 urxvt*keysym.C-F4:            command:\033]710;xft:Inconsolate NF:pixelsize=22:antialias=true\007
 urxvt*keysym.C-F5:            command:\033]710;xft:Inconsolate NF:pixelsize=24:antialias=true\007
+urxvt*keysym.C-F6:            command:\033]710;xft:Inconsolata NF:pixelsize=26:antialias=true\007
+urxvt*keysym.C-F7:            command:\033]710;xft:Inconsolata NF:pixelsize=28:antialias=true\007
 
 
+xterm*faceName:           Inconsolata
 xterm*faceName:           Inconsolata NF
 xterm*faceSize:           14
 xterm*dynamicColors:      true
