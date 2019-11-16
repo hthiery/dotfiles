@@ -33,7 +33,6 @@ urxvt*keysym.C-F6:            command:\033]710;xft:Inconsolata NF:pixelsize=26:a
 urxvt*keysym.C-F7:            command:\033]710;xft:Inconsolata NF:pixelsize=28:antialias=true\007
 
 
-xterm*faceName:           Inconsolata
 xterm*faceName:           Inconsolata NF
 xterm*faceSize:           14
 xterm*dynamicColors:      true
