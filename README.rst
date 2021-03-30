@@ -114,6 +114,16 @@ Vim
 * https://github.com/rking/ag.vim
 
 
+To manage the plugins use `vim-plug`_
+
+You need to install the vim-plug with:
+
+.. code :: shell
+
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
 XResources
 ==========
 
@@ -131,3 +141,4 @@ Shell/Bash
 
 
 .. _homeshick: https://github.com/andsens/homeshick
+.. _vim-plug:  https://github.com/junegunn/vim-plug
