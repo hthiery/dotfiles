@@ -43,6 +43,16 @@ get_scm_info () {
 	fi
 }
 
+get_python_venv () {
+	if [[ -n "$VIRTUAL_ENV" ]]; then
+        # Strip out the path and just leave the env name
+		#venv="${VIRTUAL_ENV##*/}"
+		echo "${Blue}venv"
+	else
+		echo ""
+	fi
+}
+
 Promptsymbol='#'
 
 Groupercolor="$Reset"
@@ -75,7 +85,9 @@ set_prompt () {
 
 	scminfo=`get_scm_info`
 
-	wrap "$userhost" "$currentdir" "$scminfo" "$lastreturn"
+	python_venv=`get_python_venv`
+
+	wrap "$userhost" "$currentdir" "$python_venv" "$scminfo" "$lastreturn"
 
 	PS1+="\n$Lastline$Horizontal$Leftgrouper$Promptsymbol$Rightgrouper $Reset"
 }
