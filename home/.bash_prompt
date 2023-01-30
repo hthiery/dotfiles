@@ -26,6 +26,8 @@ get_git_info () {
 	local OUT=`git rev-parse --abbrev-ref HEAD`
 	if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
 		echo "${Red}git:$OUT"
+	elif [[ $(git diff --cached --shortstat 2> /dev/null | tail -n1) != "" ]]; then
+		echo "${Yellow}git:$OUT"
 	else
 		echo "${Green}git:$OUT"
 	fi
