@@ -15,10 +15,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'morhetz/gruvbox'
+"Plug 'chriskempson/base16-vim'
 
 Plug 'nlknguyen/c-syntax.vim'
 Plug 'vim-scripts/gtk-vim-syntax'
 Plug 'mfukar/robotframework-vim'
+
+Plug 'edkolev/promptline.vim'
+
+"Plug 'valloric/youcompleteme'
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
@@ -28,6 +34,9 @@ call plug#end()
 
 set encoding=utf-8
 
+" ---------------------------------------------------------
+" jump to the last position when reopening a file
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 syntax enable       " enable syntax processing
 set number          " show line numbers
@@ -48,7 +57,12 @@ set scrolloff=5
 set smartindent
 set autoindent
 
+" ---------------------------------------------------------
+" colorscheme
+"let base16colorspace=256  " Access colors present in 256 colorspace
+"colorschem base16-gruvbox-dark-hard
 colorschem gruvbox
+let g:gruvbox_contrast_dark='hard'
 set background=dark
 
 set backspace=indent,eol,start
@@ -162,3 +176,12 @@ set updatetime=100
 " CtrlP
 "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 "let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+
+" ---------------------------------------------------------
+" YCM - you complete me
+" <CTRL-N> next
+" <CTRL-P> previous
+"let g:ycm_global_ycm_extra_conf = "$HOME/.vim/.ycm_extra_conf.py"
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
