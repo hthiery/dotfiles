@@ -51,6 +51,7 @@ set hlsearch            " highlight matches
 set hidden
 
 set wildmenu            " visual autocomplete for command menu
+set wildoptions=pum
 
 set scrolloff=5
 
@@ -165,6 +166,8 @@ let g:airline_theme = 'gruvbox'
 " ---------------------------------------------------------
 " NERDtree
 nnoremap <f3> :NERDTreeToggle<CR>
+
+nnoremap <f4> :set invnumber<CR>
 
 nnoremap \  :Ag
 
