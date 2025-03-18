@@ -230,7 +230,8 @@ bar {
         urgent_workspace   #aa0000 #990000 #ffffff
     }
 #	position top
-    status_command i3status --config ~/.i3/i3status.conf
+#    status_command i3status --config ~/.i3/i3status.conf
+    status_command i3status --config ~/.config/i3/i3status.conf
 }
 
 bindsym $mod+t border normal
