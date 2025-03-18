@@ -124,6 +124,13 @@ You need to install the vim-plug with:
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
+Now the vim plugins can be installed. Start vim and enter:
+
+.. code :: shell
+
+   :PlugInstall
+
+
 XResources
 ==========
 
